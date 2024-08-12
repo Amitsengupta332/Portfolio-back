@@ -12,12 +12,12 @@ export interface TUser {
 }
 
 export interface TLoginUser {
-  username: string;
+  email: string;
   password: string;
 }
 
 export interface UserModel extends Model<TUser> {
-  isUserExistByUserName(name: string): Promise<TUser>;
+  isUserExistByEmail(email: string): Promise<TUser>;
   isUserExistById(id: string): Promise<TUser>;
 
   isPasswordMatched(

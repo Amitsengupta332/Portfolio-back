@@ -13,7 +13,7 @@ const createUser = async (payload: TUser) => {
 
 const loginUser = async (payload: TLoginUser) => {
   // Check if the user is exist
-  const user = await User.isUserExistByUserName(payload?.username);
+  const user = await User.isUserExistByEmail(payload?.email);
 
   if (!user) {
     throw new AppError(httpStatus.NOT_FOUND, 'This user is not found');

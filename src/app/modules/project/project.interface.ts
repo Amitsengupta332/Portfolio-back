@@ -5,5 +5,5 @@ export interface TProject {
   frontEndRepo: string;
   backEndRepo: string;
   liveLink: string;
-  images: string;
+  images?: string;
 }

@@ -4,6 +4,7 @@ import { TProject } from './project.interface';
 import { Project } from './project.model';
 
 const createProject = async (project: TProject) => {
+  console.log(project);
   const result = await Project.create(project);
   return result;
 };

@@ -9,7 +9,7 @@ const projectSchema = new Schema<TProject>(
     frontEndRepo: { type: String, required: true },
     backEndRepo: { type: String, required: true },
     liveLink: { type: String },
-    images: { type: String, required: true },
+    images: { type: String },
   },
   {
     timestamps: true,

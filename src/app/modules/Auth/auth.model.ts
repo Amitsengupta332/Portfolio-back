@@ -67,9 +67,16 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-// reuseable static method for ckecking user exist by username
-userSchema.statics.isUserExistByUserName = async function (username: string) {
-  return await User.findOne({ username: username }).select('+password');
+// // reuseable static method for ckecking user exist by username
+// userSchema.statics.isUserExistByUserName = async function (username: string) {
+//   return await User.findOne({ username: username }).select('+password');
+// };
+
+// reuseable static method for checking user exist by email
+userSchema.statics.isUserExistByEmail = async function (email: string) {
+  return await User.findOne({ email: email })
+    .select('+password')
+    .select('+role');
 };
 
 // reuseable static method for ckecking user exist by _id
